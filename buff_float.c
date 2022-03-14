@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 /**
- * print_float - calcs buffer size needed for a float.
+ * buff_float - calcs buffer size needed for a float.
  * @args: pointer to the list_item we need to print
  * Description: buffSize starts at 8 to allow for
  * number + decimalpoint + 6 decimal places.
@@ -23,12 +23,12 @@ int buff_float(va_list *args)
 		 * add 1 to buffSize to allow for - sign
 		 */
 		c = c * -1;
-		buffSize ++;
+		buffSize++;
 	}
 	while (c > 9)
 	{
 		c = c / 10;
-		buffSize ++;
+		buffSize++;
 	}
 
 	return (buffSize);

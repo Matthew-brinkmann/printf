@@ -54,7 +54,6 @@ char *print_char(char *format, va_list *var);
 char *print_int(char *format, va_list *var);
 char *print_string(char *format, va_list *var);
 char *print_percent(char *format, va_list *var);
-char *print_float(char *format, va_list *var);
 char *print_eight(char *format, va_list *var);
 char *print_sixteen(char *format, va_list *var);
 char *print_mod(char *format, va_list *var);

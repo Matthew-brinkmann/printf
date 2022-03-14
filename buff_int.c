@@ -22,12 +22,12 @@ int buff_int(va_list *args)
 		 * add 1 to buffSize to allow for - sign
 		 */
 		c = c * -1;
-		buffSize ++;
+		buffSize++;
 	}
 	while (c > 9)
 	{
 		c = c / 10;
-		buffSize ++;
+		buffSize++;
 	}
 
 	return (buffSize);

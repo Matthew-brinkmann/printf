@@ -13,8 +13,13 @@ int main(void)
     _printf("Hi guys,\n");
     _printf("hi guys %s bob\n", s);
     _printf("sup guys %o typop\n", 8);
+<<<<<<< HEAD:test.c
     _printf("oct test: %x\n", 1553);
 	_printf("int test %i\n", -1414);
 	_printf("char test %s\n", 'C');
+=======
+    _printf("oct test: %x\n", -1553);
+    _printf("int test %i\n", -1414);
+>>>>>>> main:test/test.c
    return (0);
 }

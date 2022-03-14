@@ -22,7 +22,6 @@ char *print_mod(char *format, va_list *var)
 		{"d", print_int},
 		{"i", print_int},
 		{"b", print_binary},
-		{"f", print_float},
 		{"o", print_eight},
 		{"x", print_sixteen},
 		{"X", print_sixteen},
@@ -60,15 +59,16 @@ char *print_mod(char *format, va_list *var)
 
 int _printf(const char *format, ...)
 {
-/*	this will be our super awesome function!!*/
 	va_list print, search;
 	unsigned int i = 0;
 	char *formatCpy;
 	int buffSize;
 
-	/* the next few lines will allocate space
-	   and copy the original string to a new
-	   location on the heap for us to manipulate */
+	/**
+	 * the next few lines will allocate space
+	 * and copy the original string to a new
+	 * location on the heap for us to manipulate
+	 */
 	va_start(print, format);
 	va_copy(search, print);
 	buffSize = buff_size_calc(format, &search);
@@ -76,8 +76,10 @@ int _printf(const char *format, ...)
 	formatCpy = malloc(buffSize);
 	_strcpy(formatCpy, format);
 
-	/* These loops will find the modifier character and will
-	 send to the print_mod function to do the heavy lifting.*/
+	/**
+	 * These loops will find the modifier character and will
+	 * send to the print_mod function to do the heavy lifting.
+	 */
 	while (formatCpy != NULL && (*(formatCpy + i)) != '\0')
 	{
 		if (*(formatCpy + i) == '%')

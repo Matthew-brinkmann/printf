@@ -13,9 +13,11 @@ char *print_binary(char *format, va_list *var)
 {
 	char *formatEnd, newStr[32];
 	unsigned int arg, i, idx;
+	int argTest = 0;
 
 	arg = va_arg(*var, unsigned int);
-	if (arg < 0)
+	argTest = arg;
+	if (argTest < 0)
 		exit(101);
 
 	formatEnd = malloc(sizeof(*formatEnd) * (_strlen(format) + 1));

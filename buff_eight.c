@@ -23,11 +23,13 @@ int buff_eight(va_list *args)
 		 * add 1 to buffSize to allow for - sign
 		 */
 		c = c * -1;
-		buffSize ++;
+		buffSize++;
 	}
 	while (c > 7)
 	{
 		c = c / 8;
-		buffSize ++;
+		buffSize++;
 	}
+
+	return (buffSize);
 }

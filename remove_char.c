@@ -4,7 +4,7 @@
 
 /**
  * remove_char - inserts \b into a string to remove an unwanted char
- * @format - the string to be altered
+ * @format: the string to be altered
  * Return: pointer to the altered string or NULL
  */
 char *remove_char(char *format)

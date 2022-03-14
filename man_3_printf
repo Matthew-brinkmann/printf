@@ -1,33 +1,34 @@
-% _printf function 1.0
-% Matthew Brinkmann, Karoline Silva, Cienna Nguyen.
-% 13 March 2022
-# NAME
-_printf
-# SYNOPSIS
+.TH man 2 "15 march 2022" "1.00" "_printf() man page"
+.SH NAME
+_printf -- output to std with options
+.SH SYNOPSIS
 int _printf(const char *format, ...);
-# DESCRIPTION
+.SH DESCRIPTION
 _printf \- Prints a string onto the screen, taking into account a number (0 - alot) of additional arguments
-# OPTIONS
+.SH OPTIONS
 The following options need to be preceeded with a '%' sign to take effect.
-**c**   
-: print_char   
-**s**   
-: print_string   
-**%**    
-: print_percent    
-**d**    
-: print_int      
-**f**    
-: print_float    
-**o**     
-: print_eight     
-**x**       
-: print_sixteen     
-# RETURN VALUE
+.PP
+.B c\fR : print_char   
+.PP
+.B s\fR : print_string   
+.PP
+.B %\fR : print_percent    
+.PP
+.B d\fR : print_int      
+.PP
+.B o\fR : print_eight     
+.PP
+.B x\fR : print_sixteen
+.SH RETURN VALUE
 If the function is successful it will return the length of the string it prints excluding the terminating null byte ('\0').
 If the function fails to find a matching % modifier function, it will exit with error 99.     
 We will change the exit 99 to a return -1 when we get closer to final version.
-# SEE ALSO
-printf(1), puts(3)
-# BUGS
-currently will not convert any of the modifiers, will just print the string to the screen.
+.SH SEE ALSO
+.I 
+puts(3), printf(1)
+.SH BUGS
+No known bugs, does not implement all qualities of stdio printf, however.
+.SH IMPROVEMENTS
+Implement further modifications options in coming days.
+.SH AUTHOR
+Matthew Brinkmann, Karoline Silva, Cienna Nguyen.

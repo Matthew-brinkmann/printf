@@ -6,9 +6,8 @@
 /**
 * buff_sixteen - calcs the size needed for the buffer
 * @args: pointer to the list_item we need to print
-* Description: this seems redudant but the main use here
-* is to remove the top element of the list.
-* will use this function to allow use of flags.
+* Description:
+*
 * Return: will return a blank 4 for now.
 */
 int buff_sixteen(va_list *args)
@@ -23,12 +22,12 @@ int buff_sixteen(va_list *args)
 		 * add 1 to buffSize to allow for - sign
 		 */
 		c = c * -1;
-		buffSize ++;
+		buffSize++;
 	}
 	while (c > 15)
 	{
 		c = c / 16;
-		buffSize ++;
+		buffSize++;
 	}
 
 	return (buffSize);

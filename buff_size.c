@@ -38,7 +38,7 @@ int buff_size_calc(const char *format, va_list *args)
 			k = i + 1;
 			if ((*(format + i) == '%') && (*(format + k) == '%'))
 			{
-				buffSize ++;
+				buffSize++;
 				i++;
 				break;
 			}

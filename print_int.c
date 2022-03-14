@@ -13,13 +13,10 @@ char *print_int(char *format, va_list *var)
 {
 	char *formatEnd;
 	char intToChar[32];
-	int argInt, orgInt;
-	int i = 0; /* element order of intToChar */
-	int a = 0; /* element order of format */
+	int argInt, orgInt, i = 0, a = 0
 
 	argInt = va_arg(*var, int);
 	orgInt = argInt;
-	
 	formatEnd = malloc(sizeof(*formatEnd) * (_strlen(format) + 1));
 	if (formatEnd == NULL)
 		return (format);
@@ -35,7 +32,6 @@ char *print_int(char *format, va_list *var)
 		i++;
 	}
 	intToChar[i] = argInt + 48;
-	
 	if (orgInt < 0)
 	{
 		i++;
@@ -47,13 +43,11 @@ char *print_int(char *format, va_list *var)
 		a++;
 		i--;
 	}
-
 	format = format + a;
 	if (_strlen(formatEnd) > 2)
 		_strcpy(format, formatEnd + 2);
 	else
 		*format = '\0';
 	free(formatEnd);
-
 	return (format);
 }

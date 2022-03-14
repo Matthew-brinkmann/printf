@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 /**
- * print_string - calcs the size of a string
+ * buff_string - calcs the size of a string
  * @args: pointer to the list_item calc the size of
  * Description: long description
  *
