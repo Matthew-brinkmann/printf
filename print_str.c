@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -8,28 +9,25 @@
   * @var: va_list pointer
   * Return: if string is NULL, return pointer
   */
-char *print_string(char *format, va_list *var)
+t_buff *print_string(t_buff *b_info, va_list *var)
 {
-	char *formatEnd, *argStr;
+	char *argStr;
+	int count = 0, len;
 
 	argStr = va_arg(*var, char *);
+	len = _strlen(argStr);
 
 	if (argStr == NULL || *argStr == '\0')
-		return (NULL);
+		return (b_info);
 
-	formatEnd = malloc(sizeof(*formatEnd) * (_strlen(format) + 1));
-	if (formatEnd == NULL)
-		return (NULL);
+	while (count <= len)
+	{
+		b_info->buffer[b_info->buff_loc]
+			= argStr[count];
+		count++;
+		b_info->buff_loc++;
+	}
+	b_info->buff_len = b_info->buff_len + len + 1;
 
-	_strcpy(formatEnd, format);
-	_strcpy(format, argStr);
-
-	format = format + _strlen(argStr);
-
-	if (_strlen(formatEnd) > 2)
-		_strcpy(format, formatEnd + 2);
-
-	free(formatEnd);
-
-	return (format);
+	return (b_info);
 }

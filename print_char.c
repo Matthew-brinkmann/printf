@@ -1,28 +1,24 @@
 #include <stdlib.h>
 #include <stdarg.h>
+#include <stdio.h>
 #include "main.h"
 
 /**
   * print_char - function to print char %c
-  * @format: copy of format char pointed to %c
-  * @format: the string character to manipulate
+  * @b_info: copy of format char pointed to %c
   * @var: the list to manipulate.
   * Return: if char is NULL, return pointer
   */
-char *print_char(char *format, va_list *var)
+t_buff *print_char(t_buff *b_info, va_list *var)
 {
-	char *formatEnd;
+	char arg;
 
-	formatEnd = malloc(sizeof(*formatEnd) * (_strlen(format) + 1));
-	if (formatEnd == NULL)
-		return (NULL);
-	_strcpy(formatEnd, format);
-	*format = va_arg(*var, int);
+	arg = va_arg(*var, int);
 
-	format = format + 1;
-	if (_strlen(formatEnd) > 2)
-		_strcpy(format, formatEnd + 2);
+	b_info->buffer[b_info->buff_loc]
+		= arg;
+	b_info->buff_len++;
+	b_info->buff_loc++;
 
-	free(formatEnd);
-	return (format);
+	return (b_info);
 }
